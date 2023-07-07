@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+  <title>Torre de Hanoi</title>
+  <link rel="stylesheet" href="Torre.css">
+  <script src="torre.js"></script>
+  
+</head>
+<body>
+  <div class="izquierda">
+    <h1>Torre de Hanoi</h1>
+
+    <label for="diskCount" >Número de discos:</label>
+    <input type="number" id="diskCount" min="1" max="10">
+    <button onclick="startGame(); clean()">Iniciar juego</button>
+    <button onclick="startGame(); clean(); hanoi(1,2,3,document.getElementById('diskCount').value)">Resolver juego</button>
+
+    <div id="towers" class="towers">
+      <div class="tower" id="towerA" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="tower" id="towerB" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div class="tower" id="towerC" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+  </div>
+
+  <div class="derecha" id="derecha">
+    
+  </div>
+</body>
+</html>

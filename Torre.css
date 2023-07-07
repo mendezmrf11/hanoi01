@@ -1,0 +1,46 @@
+
+    body {
+      display: flex;
+      background: #FFB75E;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-size: large;
+      padding-left: 30px;
+    }
+
+    .towers{
+      display: flex;
+      width: 700px;
+    }
+    .tower {
+      width: 200px;
+      height: 250px;
+      border: 4px solid white;
+      margin: 10px;
+      display: flex;
+      flex-direction: column-reverse;
+      border-radius: 5px;
+    }
+
+    .disk {
+      background-color: rgb(255, 255, 255);
+      border: 2px solid rgb(119, 118, 118);
+      border-radius: 5px;
+      width: 0;
+      height: 20px;
+      margin: 0 auto;
+      transition: all 0.3s;
+      cursor: move;
+    }
+
+    .derecha{
+      display: inline-block;
+      margin-left: 50px;
+    }
+
+    .izquierda{
+      display: inline-block;
+    }
