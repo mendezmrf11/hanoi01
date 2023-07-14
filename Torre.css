@@ -13,16 +13,31 @@
 
     .towers{
       display: flex;
-      width: 700px;
+      width: 780px;
     }
+    
     .tower {
-      width: 200px;
+      width: 325px;
       height: 250px;
       border: 4px solid white;
       margin: 10px;
       display: flex;
       flex-direction: column-reverse;
       border-radius: 5px;
+    }
+
+    .subs{
+      display: flex;
+      width: 780px;
+    }
+    .sub {
+      width: 325px;
+      height: 50px;
+      justify-content: center;      
+      margin: 10px;
+      display: flex;
+      border-radius: 5px;
+      font-size: larger;
     }
 
     .disk {

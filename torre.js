@@ -8,6 +8,9 @@ var origen = torre1;
 var fin = torre3;
 var auxiliar = torre2;
 */
+var sleep = function(ms){
+  return new Promise(resolve => setTimeout(resolve, ms));
+};
 
 function hanoi(torre1, torre2, torre3, discos)
 {
@@ -19,33 +22,51 @@ function hanoi(torre1, torre2, torre3, discos)
     // Caso exito
     if(discos==1)
     {
-        // document.write("Disco " + discos + ", de torre " + torre1 + " a " + torre3 + "</br>");
-
- 
-        divNuevo.textContent = "Disco " + discos + ", de torre " + torre1 + " a " + torre3;
-        divNuevo.appendChild(checNuevo);
+      divNuevo.textContent = "Disc " + discos + ", from tower " + torre1 + " to " + torre3 + " ";
+      divNuevo.appendChild(checNuevo);
         divDerecha.appendChild(divNuevo);
-        //console.log("Disco " + discos + ", de torre " + torre1 + " a " + torre3)
     }
     else
     {
-        // 1, 1, 2, 3
         hanoi(torre1, torre3, torre2, discos-1);
-        // document.write("Disco " + discos + ", de torre " + torre1 + " a " + torre3 + "</br>");
-
-    
-        divNuevo.textContent = "Disco " + discos + ", de torre " + torre1 + " a " + torre3;
+        
+        divNuevo.textContent = "Disc " + discos + ", from tower " + torre1 + " to " + torre3 + " ";
         divNuevo.appendChild(checNuevo);
         divDerecha.appendChild(divNuevo);
-        // console.log("Disco " + discos + ", de torre " + torre1 + " a " + torre3)
+
         // Se mueve de aux a fin
         hanoi(torre2, torre1, torre3, discos-1);
     }
 }
 
+async function hanoiAuto(torre1, torre2, torre3, discos) {
+  var divDerecha = document.getElementById('derecha');
+  var divNuevo = document.createElement('div');
+
+  // Caso éxito
+  if (discos == 1) {
+    divNuevo.textContent = "Disc " + discos + ", from tower " + torre1 + " to " + torre3;
+    divDerecha.appendChild(divNuevo);
+    moveDisk(torre1, torre3);
+    await sleep(2000);
+
+  } 
+  else {
+    await hanoiAuto(torre1, torre3, torre2, discos - 1);
+
+    divNuevo.textContent = "Disc " + discos + ", from tower " + torre1 + " to " + torre3;
+    divDerecha.appendChild(divNuevo);
+    moveDisk(torre1, torre3);
+    await sleep(2000);
+
+    // Mueve de aux a fin
+    await hanoiAuto(torre2, torre1, torre3, discos - 1);
+  }
+}
+
 function clean()
 {
-    document.getElementById('derecha').innerHTML = "<h1>Solucion</h1><br>";
+    document.getElementById('derecha').innerHTML = "<h1>Solution</h1><br>";
 }
 
 let diskCount;
@@ -59,8 +80,13 @@ let towers = {
 
 function startGame() {
   diskCount = parseInt(document.getElementById("diskCount").value);
+  if ( !Number.isInteger(diskCount))
+  { 
+    Swal.fire('Put the number of discs');
+  }
   initializeTowers();
-  render();
+  render(); 
+  
 }
 
 function initializeTowers() {
