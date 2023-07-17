@@ -1,4 +1,8 @@
 
+    /***** Cuerpo de la pagina web 
+    Coloca fondo difuminado, con fuente Nunito
+    *****/
+
     body {
       display: flex;
       background: #FFB75E;  /* fallback for old browsers */
@@ -11,25 +15,34 @@
       padding-left: 30px;
     }
 
+    /***** Estilo del div que contiene las 3 torres *****/
     .towers{
       display: flex;
       width: 780px;
+      justify-content: space-between;
     }
     
+    /***** Estilo del div de cada torre individual *****/
     .tower {
       width: 325px;
       height: 250px;
       border: 4px solid white;
-      margin: 10px;
+      margin-top: 10px;
+      margin-right: 10px;
       display: flex;
       flex-direction: column-reverse;
       border-radius: 5px;
+      background-image: url("barra.png");
+      background-size: cover;
     }
 
+    /***** Estilo del div que contiene los 3 subtitulos de nombre de torres *****/
     .subs{
       display: flex;
       width: 780px;
     }
+
+    /***** Estilo del div de cada subtitulo individual de nombre de torres *****/
     .sub {
       width: 325px;
       height: 50px;
@@ -40,6 +53,7 @@
       font-size: larger;
     }
 
+    /***** Estilo de cada disco del juego *****/
     .disk {
       background-color: rgb(255, 255, 255);
       border: 2px solid rgb(119, 118, 118);
@@ -51,11 +65,93 @@
       cursor: move;
     }
 
+    /***** Estilo del div de la derecha, donde salen la solucion *****/
     .derecha{
       display: inline-block;
       margin-left: 50px;
     }
 
+    /***** Estilo del div de la izquierda, donde salen las torres, los botones y subtitulos *****/
     .izquierda{
       display: inline-block;
     }
+    
+    /***** Estilo de cada boton *****/
+    .button {
+      display: inline-block;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #FF9933;
+      border-radius: 4px;
+      border: none;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+    
+    .button:hover {
+      background-color: #FF8020;
+    }
+    
+    .button:active {
+      background-color: #FFA040;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+
+    /***** Estilo de titulo principal "Tower Of Hanoi" *****/
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #463e3e;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /***** Estilo de titulo secundario de solucion "Solution" *****/
+    .title-2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #463e3e;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /***** Estilo de el input de el numero de discos*****/
+    .button-2 {
+      display: inline-block;
+      width: 90px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #FF9933;
+      border-radius: 4px;
+      border: none;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+    
+    .button-2:hover {
+      background-color: #FF8020;
+    }
+    
+    .button-2:active {
+      background-color: #FFA040;
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+    
+    
+    
+    
+    

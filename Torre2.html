@@ -12,13 +12,13 @@
 </head>
 <body>
   <div class="izquierda">
-    <h1>Tower Of Hanoi</h1>
+    <h1 class="title">Tower Of Hanoi</h1>
 
     <label for="diskCount" >Number of discs:</label>
-    <input type="number" id="diskCount" min="1" max="10">
-    <button onclick="startGame(); clean()">Star Game</button>
-    <button onclick="startGame(); clean(); hanoi('towerA', 'towerB', 'towerC', parseInt(document.getElementById('diskCount').value))">Manual Solution</button>
-    <button onclick="startGame(); clean(); hanoiAuto('towerA', 'towerB', 'towerC', parseInt(document.getElementById('diskCount').value))">Auto Solution</button>
+    <input type="number" id="diskCount" min="1" max="10" class="button-2">
+    <button class="button" onclick="startGame(); clean()">Star Game</button>
+    <button class="button" onclick="startGame(); clean(); hanoi('towerA', 'towerB', 'towerC', parseInt(document.getElementById('diskCount').value))">Manual Solution</button>
+    <button class="button" onclick="startGame(); clean(); hanoiAuto('towerA', 'towerB', 'towerC', parseInt(document.getElementById('diskCount').value))">Auto Solution</button>
 
 
     <div id="towers" class="towers">
@@ -34,7 +34,7 @@
   </div>
 
   <div class="derecha" id="derecha">
-    
+  
   </div>
 </body>
 </html>
